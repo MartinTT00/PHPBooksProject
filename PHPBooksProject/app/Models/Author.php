@@ -34,7 +34,10 @@ class Author extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class, 'author_genres','author_id', 'genre_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
