@@ -34,7 +34,10 @@ class Book extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

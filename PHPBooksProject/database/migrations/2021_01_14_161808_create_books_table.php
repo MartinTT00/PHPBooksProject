@@ -17,6 +17,7 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->integer('yearOfPublishment');
+            $table->integer('author_id')->unsigned();
             $table->timestamps();
         });
     }
