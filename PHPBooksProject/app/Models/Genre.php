@@ -34,7 +34,10 @@ class Genre extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

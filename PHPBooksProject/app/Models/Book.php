@@ -38,6 +38,10 @@ class Book extends Model
     {
         return $this->belongsTo(Author::class);
     }
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

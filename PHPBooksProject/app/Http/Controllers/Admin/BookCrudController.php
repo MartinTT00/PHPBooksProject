@@ -32,6 +32,15 @@ class BookCrudController extends CrudController
                 'type'=> 'text'
             ],
             [    // Select2Multiple = n-n relationship (with pivot table)
+                'label'     => "Genre",
+                'type'      => 'select',
+                'name'      => 'genre_id', // name of field 
+// optional
+                'entity'    => 'genre', // the method that defines the relationship in your Model
+                'model'     => "App\Models\Genre", // foreign key model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+            ],
+            [    // Select2Multiple = n-n relationship (with pivot table)
                 'label'     => "Author",
                 'type'      => 'select',
                 'name'      => 'author_id', // name of field 
@@ -39,7 +48,7 @@ class BookCrudController extends CrudController
                 'entity'    => 'author', // the method that defines the relationship in your Model
                 'model'     => "App\Models\Author", // foreign key model
                 'attribute' => 'name', // foreign key attribute that is shown to user
-            ]
+            ],
         ];
     }
 
