@@ -45,6 +45,13 @@ class AuthorCrudController extends CrudController
                 'model'     => "App\Models\Genre", // foreign key model
                 'attribute' => 'name', // foreign key attribute that is shown to user
                 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+            ],
+            [
+                'label' => "Author Image",
+                'name' => "image",
+                'type' => 'image',
+                'crop' => true, // set to true to allow cropping, false to disable
+                'aspect_ratio' => 0, // omit or set to 0 to allow any aspect ratio
             ]
         ];
     }
@@ -70,7 +77,7 @@ class AuthorCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+      //  CRUD::setFromDb(); // columns
             $this->crud->set('show.setFromDb', false);
             $this->crud->addColumns($this->getFieldsData(TRUE));
             // Read action -  all authors to see genres column
