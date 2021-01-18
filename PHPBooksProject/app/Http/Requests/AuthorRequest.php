@@ -26,7 +26,9 @@ class AuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:4|max:100',
+            'age' => 'required|min:1|max:3',
+            'countOfBooks' => 'required|min:1|max:4',
         ];
     }
 
@@ -50,7 +52,10 @@ class AuthorRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+                'name.required' => 'Please provide valid name!',
+                'name.min' => 'Plese provide valid name  which is between 4 and 100 characters.',
+                'age.required' => 'You should provide valid age.',
+                'countOfBooks.unique' => 'Enter how many books the author has.',
         ];
     }
 }
