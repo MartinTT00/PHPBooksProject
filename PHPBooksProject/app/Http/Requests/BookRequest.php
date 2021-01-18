@@ -26,7 +26,10 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:4|max:100',
+            'yearOfPublishment' => 'required|min:4|max:4',
+            'author_id' => 'required',
+            'genre_id' => 'required'
         ];
     }
 
@@ -50,7 +53,11 @@ class BookRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'name.required' => 'Please provide valid name which is between 4 and 100 characters.',
+            'name.min' => 'Plese provide valid name which is with minimum 4 characters',
+            'yearOfPublishment.required' => 'You should provide valid age.',
+            'author_id.required' => 'Please select Author',
+            'genre_id.required' => 'Please select Genre!'
         ];
     }
 }

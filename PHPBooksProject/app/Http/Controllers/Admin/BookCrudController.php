@@ -43,7 +43,7 @@ class BookCrudController extends CrudController
             [    // Select2Multiple = n-n relationship (with pivot table)
                 'label'     => "Author",
                 'type'      => 'select',
-                'name'      => 'author_id', // name of field 
+                'name'      => 'author_id', // name of field //if was only author --> we will get the id of author and show it
 // optional
                 'entity'    => 'author', // the method that defines the relationship in your Model
                 'model'     => "App\Models\Author", // foreign key model
