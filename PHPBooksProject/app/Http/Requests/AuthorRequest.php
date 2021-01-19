@@ -29,6 +29,7 @@ class AuthorRequest extends FormRequest
             'name' => 'required|min:4|max:100',
             'age' => 'required|min:1|max:3',
             'countOfBooks' => 'required|min:1|max:4',
+            'genres' => 'required'
         ];
     }
 
@@ -56,6 +57,7 @@ class AuthorRequest extends FormRequest
                 'name.min' => 'Plese provide valid name  which is between 4 and 100 characters.',
                 'age.required' => 'You should provide valid age.',
                 'countOfBooks.unique' => 'Enter how many books the author has.',
+                'genres.required' => 'Enter genre/genres!'
         ];
     }
 }
