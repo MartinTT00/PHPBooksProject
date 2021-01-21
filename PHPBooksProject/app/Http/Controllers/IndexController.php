@@ -14,10 +14,19 @@ class IndexController extends Controller
         //Get data from DB in here and pass it to the view
         $books = Book::with('author', 'genre')->orderByDesc('id')->get();
         return view('index.index', [
-            'title' => 'yooyoyoyoy',
-            'text' => 'daskdasdkas',
+            'title' => 'Списък с книги',
+            'text' => 'Търсене по автор/жанр',
             'books' => $books, 
             
             ]);
+    }
+
+    public function search(Request $request) {
+        $searchQuery = $request->get('searchTextInput');
+        $searchResult = Author::with('genres', 'books')->where('name', 'LIKE',
+            '%'.$searchQuery.'%')->get();
+        return view('index.search', [
+            'authors' => $searchResult
+        ]);
     }
 }
