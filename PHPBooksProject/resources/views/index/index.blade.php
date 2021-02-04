@@ -9,7 +9,15 @@
 				
 				<form action="/search" method="get">
                 <div>
-                    <input type="text" id="searchTextInput"  name="searchTextInput" style="float: right" />
+                 <input type="text" id="searchTextInput" placeholder="Search Telephone by criteria"
+                           name="searchTextInput" />
+                    <br>
+                    <br>
+                    <br>
+                    <select name="searchCriteria" id="searchCriteria">
+                        <option value="author">Author</option>
+                        <option value="genre">Genre</option>
+                    </select>
                     <br>
                     <br>
                     <br>

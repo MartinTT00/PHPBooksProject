@@ -23,10 +23,25 @@ class IndexController extends Controller
 
     public function search(Request $request) {
         $searchQuery = $request->get('searchTextInput');
-        $searchResult = Author::with('genres', 'books')->where('name', 'LIKE',
-            '%'.$searchQuery.'%')->get();
+        $searchCriteria = $request->get('searchCriteria');
+        if($searchCriteria == 'genre') {
+            $searchResult = Book::with('author', 'genre')->whereHas('genre',
+                function ($query) use ($searchQuery){
+                $query->where('name', 'LIKE', '%'.$searchQuery.'%');
+            })->get();
+        }
+        else{
+            $searchResult = Book::with('author', 'genre')->whereHas('author',
+            function ($query) use ($searchQuery){
+            $query->where('name', 'LIKE', '%'.$searchQuery.'%');
+        })->get();
+            
+        }
         return view('index.search', [
-            'authors' => $searchResult
-        ]);
+            'books' => $searchResult
+            ]);
     }
+
+
+
 }
