@@ -27,14 +27,14 @@ class BooksTableSeeder extends Seeder
                 'name' => 'Зимни вечери',
                 'yearOfPublishment' => 1923,
                 'author_id' => 2,
-                'genre_id' => 1
+                'genre_id' => 4
             ],
             [
                 'id' => 3,
                 'name' => 'Железният светилник',
                 'yearOfPublishment' => 1952,
                 'author_id' => 3,
-                'genre_id' => 4
+                'genre_id' => 1
             ],
             [
                 'id' => 4,
